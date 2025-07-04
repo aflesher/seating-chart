@@ -64,11 +64,38 @@ h1 {
 }
 
 .tables-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.head-table {
+    background: #d5dbdb;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.regular-tables {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
-    height: 100%;
+    flex: 1;
+}
+
+.head-table-seats {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .table {
@@ -111,10 +138,9 @@ h1 {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 0.75rem;
     font-weight: bold;
-    text-overflow: ellipsis;
     white-space: nowrap;
     padding: 0 4px;
 }
@@ -133,6 +159,12 @@ h1 {
 .seat.occupied.highlight {
     background: #58d68d;
     border-color: #27ae60;
+}
+
+.seat-name {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 .seat.occupied:hover .remove-guest {

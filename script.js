@@ -1,26 +1,89 @@
 class SeatingChart {
     constructor() {
         this.defaultGuests = [
-            { id: 1, name: 'John Smith', assigned: false, tableId: null, seatId: null },
-            { id: 2, name: 'Sarah Johnson', assigned: false, tableId: null, seatId: null },
-            { id: 3, name: 'Mike Davis', assigned: false, tableId: null, seatId: null },
-            { id: 4, name: 'Emily Wilson', assigned: false, tableId: null, seatId: null },
-            { id: 5, name: 'David Brown', assigned: false, tableId: null, seatId: null },
-            { id: 6, name: 'Lisa Garcia', assigned: false, tableId: null, seatId: null },
-            { id: 7, name: 'Robert Miller', assigned: false, tableId: null, seatId: null },
-            { id: 8, name: 'Jennifer Taylor', assigned: false, tableId: null, seatId: null },
-            { id: 9, name: 'Christopher Lee', assigned: false, tableId: null, seatId: null },
-            { id: 10, name: 'Amanda White', assigned: false, tableId: null, seatId: null },
-            { id: 11, name: 'Matthew Harris', assigned: false, tableId: null, seatId: null },
-            { id: 12, name: 'Jessica Clark', assigned: false, tableId: null, seatId: null },
-            { id: 13, name: 'Daniel Lewis', assigned: false, tableId: null, seatId: null },
-            { id: 14, name: 'Ashley Robinson', assigned: false, tableId: null, seatId: null },
-            { id: 15, name: 'Kevin Walker', assigned: false, tableId: null, seatId: null },
-            { id: 16, name: 'Stephanie Hall', assigned: false, tableId: null, seatId: null },
-            { id: 17, name: 'James Young', assigned: false, tableId: null, seatId: null },
-            { id: 18, name: 'Michelle King', assigned: false, tableId: null, seatId: null },
-            { id: 19, name: 'Ryan Scott', assigned: false, tableId: null, seatId: null },
-            { id: 20, name: 'Nicole Green', assigned: false, tableId: null, seatId: null }
+            { id: 1, name: 'Adam', assigned: false, tableId: null, seatId: null },
+            { id: 2, name: 'Rayna', assigned: false, tableId: null, seatId: null },
+            { id: 3, name: 'Dan', assigned: false, tableId: null, seatId: null },
+            { id: 4, name: 'Sara', assigned: false, tableId: null, seatId: null },
+            { id: 5, name: 'Kristina', assigned: false, tableId: null, seatId: null },
+            { id: 6, name: 'Kurt', assigned: false, tableId: null, seatId: null },
+            { id: 7, name: 'Torie', assigned: false, tableId: null, seatId: null },
+            { id: 8, name: 'Michele', assigned: false, tableId: null, seatId: null },
+            { id: 9, name: 'Matt', assigned: false, tableId: null, seatId: null },
+            { id: 10, name: 'Candace', assigned: false, tableId: null, seatId: null },
+            { id: 11, name: 'Geoff', assigned: false, tableId: null, seatId: null },
+            { id: 12, name: 'Jana', assigned: false, tableId: null, seatId: null },
+            { id: 13, name: 'Blaise', assigned: false, tableId: null, seatId: null },
+            { id: 15, name: 'Karsten', assigned: false, tableId: null, seatId: null },
+            { id: 16, name: 'Alan', assigned: false, tableId: null, seatId: null },
+            { id: 17, name: 'Gale', assigned: false, tableId: null, seatId: null },
+            { id: 18, name: 'Stew', assigned: false, tableId: null, seatId: null },
+            { id: 19, name: 'Jewels', assigned: false, tableId: null, seatId: null },
+            { id: 20, name: 'Spencer', assigned: false, tableId: null, seatId: null },
+            { id: 21, name: 'Anastasia', assigned: false, tableId: null, seatId: null },
+            { id: 22, name: 'Lee', assigned: false, tableId: null, seatId: null },
+            { id: 23, name: 'Shelley', assigned: false, tableId: null, seatId: null },
+            { id: 24, name: 'Paul', assigned: false, tableId: null, seatId: null },
+            { id: 25, name: 'Sherri', assigned: false, tableId: null, seatId: null },
+            { id: 26, name: 'Ben', assigned: false, tableId: null, seatId: null },
+            { id: 27, name: 'Shannon', assigned: false, tableId: null, seatId: null },
+            { id: 28, name: 'Jason', assigned: false, tableId: null, seatId: null },
+            { id: 29, name: 'Chris', assigned: false, tableId: null, seatId: null },
+            { id: 30, name: 'Kathryn', assigned: false, tableId: null, seatId: null },
+            { id: 31, name: 'Morgan', assigned: false, tableId: null, seatId: null },
+            { id: 32, name: 'Paul R', assigned: false, tableId: null, seatId: null },
+            { id: 33, name: 'Anita', assigned: false, tableId: null, seatId: null },
+            { id: 34, name: 'Abigale', assigned: false, tableId: null, seatId: null },
+            { id: 35, name: 'Wendy', assigned: false, tableId: null, seatId: null },
+            { id: 36, name: 'Bruce', assigned: false, tableId: null, seatId: null },
+            { id: 37, name: 'Silas', assigned: false, tableId: null, seatId: null },
+            { id: 38, name: 'Chris', assigned: false, tableId: null, seatId: null },
+            { id: 39, name: 'Carmen', assigned: false, tableId: null, seatId: null },
+            { id: 40, name: 'Brady', assigned: false, tableId: null, seatId: null },
+            { id: 41, name: 'Aunt Kay', assigned: false, tableId: null, seatId: null },
+            { id: 42, name: 'Sofia', assigned: false, tableId: null, seatId: null },
+            { id: 43, name: 'Heather', assigned: false, tableId: null, seatId: null },
+            { id: 44, name: 'Felipe', assigned: false, tableId: null, seatId: null },
+            { id: 45, name: 'Charlotte', assigned: false, tableId: null, seatId: null },
+            { id: 46, name: 'Brandon', assigned: false, tableId: null, seatId: null },
+            { id: 47, name: 'Evanne', assigned: false, tableId: null, seatId: null },
+            { id: 48, name: 'Dustin', assigned: false, tableId: null, seatId: null },
+            { id: 49, name: 'Amis', assigned: false, tableId: null, seatId: null },
+            { id: 50, name: 'Drew', assigned: false, tableId: null, seatId: null },
+            { id: 51, name: 'Maureen', assigned: false, tableId: null, seatId: null },
+            { id: 52, name: 'Katie', assigned: false, tableId: null, seatId: null },
+            { id: 53, name: 'Josh', assigned: false, tableId: null, seatId: null },
+            { id: 54, name: 'Miranda', assigned: false, tableId: null, seatId: null },
+            { id: 55, name: 'Meg', assigned: false, tableId: null, seatId: null },
+            { id: 56, name: 'Jason', assigned: false, tableId: null, seatId: null },
+            { id: 57, name: 'Penny', assigned: false, tableId: null, seatId: null },
+            { id: 58, name: 'Sean', assigned: false, tableId: null, seatId: null },
+            { id: 59, name: 'Nigel', assigned: false, tableId: null, seatId: null },
+            { id: 60, name: 'Val', assigned: false, tableId: null, seatId: null },
+            { id: 61, name: 'Sacha HC', assigned: false, tableId: null, seatId: null },
+            { id: 62, name: 'Jim', assigned: false, tableId: null, seatId: null },
+            { id: 63, name: 'Penny', assigned: false, tableId: null, seatId: null },
+            { id: 64, name: 'Nicky A', assigned: false, tableId: null, seatId: null },
+            { id: 65, name: 'Lainger', assigned: false, tableId: null, seatId: null },
+            { id: 66, name: 'Meghan N', assigned: false, tableId: null, seatId: null },
+            { id: 67, name: 'Elaine I', assigned: false, tableId: null, seatId: null },
+            { id: 68, name: 'Indiana', assigned: false, tableId: null, seatId: null },
+            { id: 69, name: 'Book', assigned: false, tableId: null, seatId: null },
+            { id: 70, name: 'Sarah H', assigned: false, tableId: null, seatId: null },
+            { id: 71, name: 'Thomas', assigned: false, tableId: null, seatId: null },
+            { id: 72, name: 'Danielle', assigned: false, tableId: null, seatId: null },
+            { id: 73, name: 'Emily W (DOC)', assigned: false, tableId: null, seatId: null },
+            { id: 74, name: 'Alanna P', assigned: false, tableId: null, seatId: null },
+            { id: 75, name: 'Emily Young', assigned: false, tableId: null, seatId: null },
+            { id: 76, name: 'Marie-Louise', assigned: false, tableId: null, seatId: null },
+            { id: 77, name: 'Keith', assigned: false, tableId: null, seatId: null },
+            { id: 78, name: 'Nancy', assigned: false, tableId: null, seatId: null },
+            { id: 79, name: 'Lance', assigned: false, tableId: null, seatId: null },
+            { id: 80, name: 'Bonnie', assigned: false, tableId: null, seatId: null },
+            { id: 81, name: 'Bruce', assigned: false, tableId: null, seatId: null },
+            { id: 82, name: 'Natalie', assigned: false, tableId: null, seatId: null },
+            { id: 83, name: 'Patrick', assigned: false, tableId: null, seatId: null },
+            { id: 84, name: 'Raychel', assigned: false, tableId: null, seatId: null }
         ];
         
         this.guests = [];
@@ -44,9 +107,28 @@ class SeatingChart {
     }
     
     createTables() {
+        // Create head table first
+        const headTable = {
+            id: 0,
+            isHeadTable: true,
+            seats: []
+        };
+        
+        for (let j = 1; j <= 10; j++) {
+            headTable.seats.push({
+                id: j,
+                guestId: null,
+                occupied: false
+            });
+        }
+        
+        this.tables.push(headTable);
+        
+        // Create regular tables
         for (let i = 1; i <= 12; i++) {
             const table = {
                 id: i,
+                isHeadTable: false,
                 seats: []
             };
             
@@ -66,7 +148,31 @@ class SeatingChart {
         const tablesGrid = document.querySelector('.tables-grid');
         tablesGrid.innerHTML = '';
         
-        this.tables.forEach(table => {
+        // Render head table first
+        const headTable = this.tables.find(table => table.isHeadTable);
+        if (headTable) {
+            const headTableElement = document.createElement('div');
+            headTableElement.className = 'head-table';
+            headTableElement.innerHTML = `
+                <div class="table-number">Head Table</div>
+                <div class="head-table-seats">
+                    ${headTable.seats.map(seat => `
+                        <div class="seat ${seat.occupied ? 'occupied' : ''}" data-table-id="${headTable.id}" data-seat-id="${seat.id}">
+                            ${seat.occupied ? `<span class="seat-name">${this.getGuestFirstName(seat.guestId)}</span>` : ''}
+                            ${seat.occupied ? '<span class="remove-guest">×</span>' : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            tablesGrid.appendChild(headTableElement);
+        }
+        
+        // Create container for regular tables
+        const regularTablesContainer = document.createElement('div');
+        regularTablesContainer.className = 'regular-tables';
+        
+        // Render regular tables
+        this.tables.filter(table => !table.isHeadTable).forEach(table => {
             const tableElement = document.createElement('div');
             tableElement.className = 'table';
             tableElement.innerHTML = `
@@ -74,16 +180,16 @@ class SeatingChart {
                 <div class="table-seats">
                     ${table.seats.map(seat => `
                         <div class="seat ${seat.occupied ? 'occupied' : ''}" data-table-id="${table.id}" data-seat-id="${seat.id}">
-                            ${seat.occupied ? this.getGuestFirstName(seat.guestId) : ''}
+                            ${seat.occupied ? `<span class="seat-name">${this.getGuestFirstName(seat.guestId)}</span>` : ''}
                             ${seat.occupied ? '<span class="remove-guest">×</span>' : ''}
                         </div>
                     `).join('')}
                 </div>
             `;
-            
-            tablesGrid.appendChild(tableElement);
+            regularTablesContainer.appendChild(tableElement);
         });
         
+        tablesGrid.appendChild(regularTablesContainer);
         this.attachSeatListeners();
     }
     
@@ -280,7 +386,7 @@ class SeatingChart {
     async loadState() {
         this.updateSaveStatus('Loading...', 'loading');
         
-        // First check if we have a binId stored locally
+        // Check if we have a binId stored locally
         const storedBinId = localStorage.getItem('seatingChart_binId');
         if (storedBinId) {
             this.binId = storedBinId;
@@ -390,7 +496,7 @@ class SeatingChart {
         
         // Update seats based on guest assignments
         this.guests.forEach(guest => {
-            if (guest.assigned && guest.tableId && guest.seatId) {
+            if (guest.assigned && guest.tableId !== null && guest.seatId !== null) {
                 const table = this.tables.find(t => t.id === guest.tableId);
                 if (table) {
                     const seat = table.seats.find(s => s.id === guest.seatId);
