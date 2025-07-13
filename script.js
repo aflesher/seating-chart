@@ -534,6 +534,7 @@ class SeatingChart {
     attachControlListeners() {
         const addButton = document.getElementById('addGuestBtn');
         const input = document.getElementById('newGuestName');
+        const printButton = document.getElementById('printBtn');
         
         addButton.addEventListener('click', () => {
             const name = input.value.trim();
@@ -551,6 +552,10 @@ class SeatingChart {
                     input.value = '';
                 }
             }
+        });
+        
+        printButton.addEventListener('click', () => {
+            window.print();
         });
     }
     

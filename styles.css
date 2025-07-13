@@ -329,6 +329,100 @@ h1 {
     background: #c0392b;
 }
 
+.print-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.print-button:hover {
+    background: #27ae60;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1, .save-status, .print-button, .guest-list-panel {
+        display: none !important;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .main-content {
+        display: block;
+    }
+    
+    .seating-area {
+        width: 100%;
+    }
+    
+    .tables-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .head-table {
+        page-break-inside: avoid;
+        margin-bottom: 30px;
+    }
+    
+    .regular-tables {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .table {
+        page-break-inside: avoid;
+        border: 2px solid #333;
+        padding: 15px;
+    }
+    
+    .table-number {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .seat {
+        border: 1px solid #333;
+        background: white !important;
+        color: #333 !important;
+        min-height: 35px;
+    }
+    
+    .seat.occupied {
+        background: #f0f0f0 !important;
+        font-weight: bold;
+    }
+    
+    .remove-guest {
+        display: none !important;
+    }
+    
+    .seat-name {
+        color: #333 !important;
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
