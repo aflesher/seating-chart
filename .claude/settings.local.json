@@ -4,7 +4,10 @@
       "Bash(git init:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(open index.html)"
+      "Bash(open index.html)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(open:*)"
     ],
     "deny": []
   }

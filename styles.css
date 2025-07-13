@@ -216,8 +216,42 @@ h1 {
     text-align: center;
 }
 
+.guest-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.guest-controls input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.guest-controls input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.guest-controls button {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.guest-controls button:hover {
+    background: #2980b9;
+}
+
 .guest-list {
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 250px);
     overflow-y: auto;
 }
 
@@ -229,6 +263,9 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .guest-item:hover {
@@ -264,6 +301,32 @@ h1 {
 .guest-info {
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+.guest-info-container {
+    flex: 1;
+}
+
+.remove-guest-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.remove-guest-btn:hover {
+    background: #c0392b;
 }
 
 @media (max-width: 768px) {

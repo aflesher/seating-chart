@@ -96,6 +96,7 @@ class SeatingChart {
         this.apiUrl = null;
         
         this.init();
+        this.attachControlListeners();
     }
     
     async init() {
@@ -203,8 +204,11 @@ class SeatingChart {
             guestElement.dataset.guestId = guest.id;
             
             guestElement.innerHTML = `
-                <div class="guest-name">${guest.name}</div>
-                ${guest.assigned ? `<div class="guest-info">Table ${guest.tableId}, Seat ${guest.seatId}</div>` : ''}
+                <div class="guest-info-container">
+                    <div class="guest-name">${guest.name}</div>
+                    ${guest.assigned ? `<div class="guest-info">Table ${guest.tableId}, Seat ${guest.seatId}</div>` : ''}
+                </div>
+                ${!guest.assigned ? '<button class="remove-guest-btn" title="Remove guest">×</button>' : ''}
             `;
             
             if (!guest.assigned) {
@@ -216,6 +220,16 @@ class SeatingChart {
             }
             
             guestList.appendChild(guestElement);
+        });
+        
+        // Attach remove button listeners
+        document.querySelectorAll('.remove-guest-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const guestItem = e.target.closest('.guest-item');
+                const guestId = parseInt(guestItem.dataset.guestId);
+                this.removeGuest(guestId);
+            });
         });
     }
     
@@ -514,6 +528,62 @@ class SeatingChart {
         if (statusElement) {
             statusElement.textContent = message;
             statusElement.className = `save-status ${status}`;
+        }
+    }
+    
+    attachControlListeners() {
+        const addButton = document.getElementById('addGuestBtn');
+        const input = document.getElementById('newGuestName');
+        
+        addButton.addEventListener('click', () => {
+            const name = input.value.trim();
+            if (name) {
+                this.addGuest(name);
+                input.value = '';
+            }
+        });
+        
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const name = input.value.trim();
+                if (name) {
+                    this.addGuest(name);
+                    input.value = '';
+                }
+            }
+        });
+    }
+    
+    addGuest(name) {
+        // Find the highest ID to generate a new one
+        const maxId = Math.max(...this.guests.map(g => g.id), 0);
+        const newGuest = {
+            id: maxId + 1,
+            name: name,
+            assigned: false,
+            tableId: null,
+            seatId: null
+        };
+        
+        this.guests.push(newGuest);
+        this.renderGuestList();
+        this.saveState();
+    }
+    
+    removeGuest(guestId) {
+        const guestIndex = this.guests.findIndex(g => g.id === guestId);
+        if (guestIndex !== -1) {
+            const guest = this.guests[guestIndex];
+            
+            // If guest is assigned to a seat, remove them from it first
+            if (guest.assigned) {
+                this.removeGuestFromSeat(guest.tableId, guest.seatId);
+            }
+            
+            // Remove guest from the list
+            this.guests.splice(guestIndex, 1);
+            this.renderGuestList();
+            this.saveState();
         }
     }
 }
